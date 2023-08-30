@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#define yes cout << "YES" << endl;
+#define no cout << "NO" << endl;
+#define ll long long
+using namespace std;
+void solve(){
+    ll k,n;
+    cin>>k>>n;
+    ll sum = 1, j = 1;
+    vector<int> v;
+    for(ll i=1; i<=k; i++){
+        v.push_back(sum);
+        if(n - (sum+j) >= k - (i+1)){
+            sum+=j;
+            j++;
+        }
+        else{
+            sum++;
+        }
+
+    }
+    sort(v.begin(), v.end());
+    for(ll i=0; i<v.size(); i++){
+        cout<<v[i]<<" ";
+    }
+    cout<<endl;
+
+
+}
+
+
+int main() {
+    int t;
+    cin>> t;
+    while(t--){
+        solve();
+
+    }
+
+
+
+    return 0;
+}
